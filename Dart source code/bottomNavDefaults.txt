@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class Defaults {
+  static const bottomNavItemColor = Colors.white;
+  static final bottomNavItemSeletedColor = Colors.lightGreenAccent[700];
+
+  static const bottomNavItemText = [
+    "Home",
+    "Discover",
+    "Search",
+    "Your Library",
+    "Concerts",
+  ];
+
+  static const bottomNavItemIcon = [
+    Icons.home_rounded,
+    Icons.travel_explore_rounded,
+    Icons.search_rounded,
+    Icons.list_rounded,
+    Icons.airplane_ticket_rounded,
+  ];
+
+  static final pages = [
+    Center(
+      child: Text(
+        "Home",
+        style: GoogleFonts.rubik(
+          color: Colors.lightGreenAccent[700],
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Discover",
+        style: GoogleFonts.rubik(
+          color: Colors.lightGreenAccent[700],
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Search",
+        style: GoogleFonts.rubik(
+          color: Colors.lightGreenAccent[700],
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Your Library",
+        style: GoogleFonts.rubik(
+          color: Colors.lightGreenAccent[700],
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        "Concerts",
+        style: GoogleFonts.rubik(
+          color: Colors.lightGreenAccent[700],
+        ),
+      ),
+    ),
+  ];
+}

@@ -1,0 +1,387 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  var widgets = [
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    ListTile(
+      leading: Text.rich(
+        TextSpan(
+          text: "G",
+          style: TextStyle(
+            fontSize: 45.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      title: Text.rich(
+        TextSpan(text: "Gopal Matcha"),
+      ),
+      subtitle: Text.rich(
+        TextSpan(text: "The gigachad"),
+      ),
+      trailing: Text.rich(
+        TextSpan(
+          text: "Sigma",
+          style: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+  ];
+
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text.rich(
+            TextSpan(
+              text: "Contacts",
+            ),
+          ),
+        ),
+        body: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                left: 9.0,
+                right: 9.0,
+                top: 10.0,
+              ),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text.rich(
+                  TextSpan(
+                    text: "Frequently contacted",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(9.0),
+              height: 100.0,
+              child: ListView(
+                children: [
+                  Text.rich(
+                    TextSpan(
+                      text: "John",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "Kenny",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "Finn",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "George",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "Max",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "Charles",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(9.0),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text.rich(
+                      TextSpan(
+                        text: "Contacts",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 500.0,
+                    child: ListView.builder(
+                      itemCount: widgets.length,
+                      itemBuilder: (context, index) {
+                        return widgets[index];
+                      },
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}

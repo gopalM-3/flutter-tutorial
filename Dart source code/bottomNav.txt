@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_project/defaults/defaults.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MainPage(),
+    );
+  }
+}
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  var indexClicked = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Music",
+          style: GoogleFonts.rubik(
+            color: Defaults.bottomNavItemSeletedColor,
+          ),
+        ),
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+        color: Colors.black,
+        child: Defaults.pages[indexClicked],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 27, 27, 27),
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Defaults.bottomNavItemSeletedColor,
+        unselectedItemColor: Defaults.bottomNavItemColor,
+        iconSize: 30.0,
+        currentIndex: indexClicked,
+        onTap: (value) {
+          setState(() {
+            indexClicked = value;
+          });
+        },
+        items: [
+          bottomNavItem(0),
+          bottomNavItem(1),
+          bottomNavItem(2),
+          bottomNavItem(3),
+          bottomNavItem(4),
+        ],
+      ),
+    );
+  }
+
+  BottomNavigationBarItem bottomNavItem(int index) {
+    return BottomNavigationBarItem(
+      // backgroundColor: Colors.black,
+      icon: Icon(Defaults.bottomNavItemIcon[index]),
+      label: Defaults.bottomNavItemText[index],
+    );
+  }
+}

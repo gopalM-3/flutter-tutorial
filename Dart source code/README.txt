@@ -1,0 +1,3 @@
+- Just copy paste the code from the respective text file into the 'main.dart' file of the flutter project.
+- Make sure that you include the assets in 'pubspec.yaml' before running the app.
+- Check the corresponding 'defaults.dart' file, if exists.

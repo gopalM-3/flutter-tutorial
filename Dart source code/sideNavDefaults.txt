@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+class Defaults {
+  static const drawerItemColor = Colors.blueGrey;
+  static final drawerItemSeletedColor = Colors.blue[700];
+  static final drawerSelectedItemColor = Colors.blue[100];
+
+  static const drawerItemText = [
+    "Inbox",
+    "Starred",
+    "Sent",
+    "Drafts",
+    "Spam",
+    "Trash",
+  ];
+
+  static const drawerItemIcon = [
+    Icons.inbox_rounded,
+    Icons.star_rounded,
+    Icons.send_rounded,
+    Icons.drafts_rounded,
+    Icons.warning_rounded,
+    Icons.delete_rounded,
+  ];
+
+  static const pages = [
+    Center(
+      child: Text("Inbox"),
+    ),
+    Center(
+      child: Text("Starred"),
+    ),
+    Center(
+      child: Text("Sent"),
+    ),
+    Center(
+      child: Text("Drafts"),
+    ),
+    Center(
+      child: Text("Spam"),
+    ),
+    Center(
+      child: Text("Trash"),
+    ),
+  ];
+}

@@ -1,0 +1,83 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text.rich(
+            TextSpan(
+              text: "Images",
+            ),
+          ),
+        ),
+        body: ListView(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(9.0),
+              child: CircleAvatar(
+                radius: 100.0,
+                child: Image.asset("assets/images/avatar.png"),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(9.0),
+              child: Image(
+                image: AssetImage(
+                  "assets/images/cutedogs.png",
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(9.0),
+              child: Image.asset("assets/images/cutedogs.png"),
+            ),
+            Container(
+              margin: EdgeInsets.all(9.0),
+              child: Image.network(
+                "https://img.redbull.com/images/c_fill,g_auto,w_1680,h_700/q_auto,f_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft",
+                loadingBuilder: ((context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return Align(
+                    alignment: Alignment.center,
+                    child: CircularProgressIndicator(),
+                  );
+                }),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(9.0),
+              child: CachedNetworkImage(
+                errorWidget: (context, url, error) => Icon(
+                  Icons.error,
+                  size: 100.0,
+                  color: Colors.blue,
+                ),
+                placeholder: (context, url) {
+                  return Image.asset("assets/images/placeholder.png");
+                },
+                imageUrl:
+                    "https://img.redbull.com/images/c_fill,g_auto,w_1680,h_700/q_auto,f_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft",
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              margin: EdgeInsets.all(9),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              elevation: 30.0,
+              child: Image.network(
+                "https://img.redbull.com/images/c_fill,g_auto,w_1680,h_700/q_auto,f_auto/redbullcom/2020/4/28/bjoyslzjb3uxqyg82uz2/minecraft",
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}

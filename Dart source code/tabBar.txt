@@ -1,0 +1,251 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_project/defaults/defaults.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+var indexClicked = 0;
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MainPage(),
+    );
+  }
+}
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  var str = "None selected.";
+  GlobalKey<ScaffoldState> drawerKey = GlobalKey();
+  VoidCallback updateState(int index) {
+    return () {
+      setState(() {
+        indexClicked = index;
+      });
+    };
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      initialIndex: 0,
+      child: Scaffold(
+        key: drawerKey,
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 255, 163, 172),
+          leading: const Icon(
+            Icons.sports_score_rounded,
+            size: 40.0,
+            color: Colors.black,
+          ),
+          title: Text(
+            "Sports",
+            style: GoogleFonts.rubik(
+              color: Colors.black,
+            ),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  str = "Cricket selected!";
+                });
+              },
+              icon: const Icon(
+                Icons.sports_cricket_rounded,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  str = "F1 selected!";
+                });
+              },
+              icon: const Icon(
+                Icons.sports_motorsports_rounded,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  str = "Profile opened.";
+                  drawerKey.currentState?.openEndDrawer();
+                });
+              },
+              icon: Image.asset("assets/images/avatar.png"),
+            ),
+          ],
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(
+                  Icons.scoreboard_rounded,
+                  color: Colors.black,
+                ),
+              ),
+              Tab(
+                icon: Icon(
+                  Icons.newspaper_rounded,
+                  color: Colors.black,
+                ),
+              ),
+              Tab(
+                icon: Icon(
+                  Icons.leaderboard,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
+        endDrawer: Drawer(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              DrawerHeader(
+                padding: EdgeInsets.zero,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 163, 172),
+                ),
+                child: Container(
+                  padding: EdgeInsets.zero,
+                  child: Column(
+                    children: [
+                      const CircleAvatar(
+                        radius: 45.0,
+                        backgroundImage: AssetImage("assets/images/avatar.png"),
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      Center(
+                        child: Text(
+                          "Zer0",
+                          style: GoogleFonts.rubik(
+                            fontSize: 30.0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    EndDrawerTile(
+                      index: 0,
+                      onTap: updateState(0),
+                    ),
+                    EndDrawerTile(
+                      index: 1,
+                      onTap: updateState(1),
+                    ),
+                    EndDrawerTile(
+                      index: 2,
+                      onTap: updateState(2),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            Center(
+              child: Text(
+                "Scores - $str",
+                style: GoogleFonts.rubik(
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "News - $str",
+                style: GoogleFonts.rubik(
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Leaderboard - $str",
+                style: GoogleFonts.rubik(
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class EndDrawerTile extends StatelessWidget {
+  const EndDrawerTile({
+    Key? key,
+    required this.index,
+    required this.onTap,
+  }) : super(key: key);
+
+  final int index;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 5.0,
+        bottom: 5.0,
+        left: 8.0,
+      ),
+      child: ListTile(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            bottomLeft: Radius.circular(30.0),
+          ),
+        ),
+        selected: indexClicked == index,
+        selectedTileColor: Defaults.endDrawerSelectedBgColor,
+        leading: Icon(
+          Defaults.endDrawerItemIcon[index],
+          size: 45.0,
+          color: indexClicked == index
+              ? Defaults.endDrawerItemSelectedColor
+              : Defaults.endDrawerItemColor,
+        ),
+        title: Text(
+          Defaults.endDrawerItemText[index],
+          style: GoogleFonts.rubik(
+            fontSize: 22.0,
+            fontWeight: FontWeight.w400,
+            color: indexClicked == index
+                ? Defaults.endDrawerItemSelectedColor
+                : Defaults.endDrawerItemColor,
+          ),
+        ),
+        onTap: onTap,
+      ),
+    );
+  }
+}
